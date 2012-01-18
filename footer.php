@@ -15,6 +15,8 @@
 	  <!-- scripts concatenated and minified via ant build script-->
 	  <script defer src="<?php bloginfo('template_directory');?>/js/plugins.js"></script>
 	  <script defer src="<?php bloginfo('template_directory');?>/js/script.js"></script>
+	  <script src="<?php bloginfo('template_directory');?>/src/prettify.js"></script>
+	  <script>prettyPrint();</script>
 	  <!-- end scripts-->
 	
 		
@@ -33,6 +35,7 @@
 	    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
 	    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
 	  <![endif]-->
-	  
+	
+	<?php wp_footer();?>  
 	</body>
 </html>
