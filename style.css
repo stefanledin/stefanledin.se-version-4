@@ -41,7 +41,7 @@ audio:not([controls]) { display: none; }
 
 html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
-body { margin: 0; font-size: 16px; line-height: 1.231; }
+body { margin: 0; font-size: 100%; line-height: 1.231; }
 
 body, button, input, select, textarea { font-family: sans-serif; color: #000; }
 
@@ -248,7 +248,14 @@ p {
 
 #container {
 	margin: 0 auto;
-	width: 960px;
+	width: 95%;
+	max-width:960px;
+}
+
+img {
+	max-width: 100%;
+	width: auto;
+	height:auto;
 }
 
 #main img, aside img {
@@ -263,7 +270,7 @@ p {
 h1 {
 	margin: 40px 0 0 0;
 	font-family: 'ChunkFiveRegular', sans-serif;
-	font-size: 63px;
+	font-size: 3.9375em; /*63 / 16*/
 	font-weight: 100;
 	color: #f1f1f1;
 	text-align: center;
@@ -366,7 +373,7 @@ nav ul li {
 .background-gradient {
 	overflow: hidden;
 	background-color: #ffffff;
-	background-image: -webkit-linear-gradient(left, #ffffff 729px,#E2E2E2 730px,#ffffff 730px, #F1F1F1 731px); 
+	background-image: -webkit-linear-gradient(left, #ffffff 75.9375%, #E2E2E2 75.9375%, #ffffff 76.041666666667%, #F1F1F1 76.145833333333%); 
 	background-image:    -moz-linear-gradient(left, #ffffff 729px,#E2E2E2 730px,#ffffff 730px, #F1F1F1 731px);
 	background-image:     -ms-linear-gradient(left, #ffffff 729px,#E2E2E2 730px,#ffffff 730px, #F1F1F1 731px);
 	background-image:      -o-linear-gradient(left, #ffffff 729px,#E2E2E2 730px,#ffffff 730px, #F1F1F1 731px);
@@ -375,13 +382,12 @@ nav ul li {
 
 #main {
 	float: left;
-	padding: 20px 19px 20px 20px;
-	width: 690px;
+	padding: 1.25em 1.188em 1.25em 1.25em;
+	width: 71.115%; /* 690 / 960 */
 }
 
 	#main > header {
 		margin: 0 0 40px 0;
-		//background: magenta;
 	}
 
 	article {
@@ -402,19 +408,28 @@ nav ul li {
 			article li {
 				margin: 0 0 7px 0;
 			}
+
+		.post-thumbnail {
+			width: 32.31884057971%;
+			//overflow: hidden;
+			float: left;
+		}
 	
 		.wp-post-image {
-			float: left;
 			margin: 0 0 13px 0;	
 		}
 		
-			.single .wp-post-image {
-				margin: 0 20px 13px 0;
+			.single .post-thumbnail {
+				margin: 0 2.898550724638% 13px 0;
 			}
 		
 			#main img.wp-post-image:hover {
 				border: 2px solid #e2e2e2; 
 			}
+
+		.wp-caption {
+			width: 100%;
+		}
 
 		.wp-caption-text {
 			margin-top:0;
@@ -446,17 +461,17 @@ nav ul li {
 		
 		.excerpt, .portfolio-info {
 			float: left;
-			margin: 0 0 0 20px;
-			width: 447px;
+			margin: 0 0 0 2.898550724638%; /*0,02.898550724638*/
+			width: 64.782608695652%; /* 447 / 690 */
 			font-weight: 100;
 		}
 
 /*Aside*/
 
 aside {
-	float: left;
-	padding: 20px 20px 20px 19px;
-	width: 190px;
+	float: right;
+	padding: 1.25em 2.083333333333% 1.25em 1.979166666667%; /* 20 / 229 */
+	width: 19.791666666667%; /* 190 / 960 */ 
 	font-size: 14px;
 	font-weight: 100;
 }
@@ -464,7 +479,7 @@ aside {
 	aside section {
 		border-top: 1px solid #e2e2e2;
 		border-bottom: 1px solid #fff;
-		padding: 25px 0 25px 0;
+		padding: 2.5em 0 2.5em 0;
 	}
 	
 		aside section p {
@@ -472,12 +487,12 @@ aside {
 		}
 	
 		aside section:first-of-type {
-			padding: 0 0 25px 0;
+			padding: 0 0 2.5em 0;
 			border-top: none;
 		}
 		
 		aside section:last-of-type {
-			padding: 25px 0 0 0;
+			padding: 2.5em 0 0 0;
 			border-bottom: none;
 		}
 		
@@ -522,7 +537,7 @@ aside {
 			#icons li {
 				list-style: none;
 				float: left;
-				margin: 0 45px 0 0;
+				margin: 0 23.684210526316% 0 0;
 			}
 			
 				#icons li:last-child {
@@ -551,20 +566,6 @@ aside {
 			border-radius: 10px;
 			border: 1px solid #D4D4D4; 
 		}
-
-/*Portfolio*/
-
-.entry-content {
-	margin: 0 20px 40px 0;
-	width: 223px;
-	float: left;
-}
-
-	.entry-content:nth-of-type(3n) {
-		margin: 0 0 40px 0;
-	}
-
-
 
 
 
@@ -612,15 +613,166 @@ aside {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 480px) {
-  /* Style adjustments for viewports 480px and over go here */
+@media only screen and (max-width:1024px) {
+	h5 {
+		text-align: center;
+	}
+
+	#icons li {
+		margin: 0 0 1.2em 0;
+		float: none;
+		text-align: center;
+	}
+}
+
+@media only screen and (max-width:950px) {
+	header h1 span {
+		font-size:25px;
+	}
+}
+
+@media only screen and (max-width:810px) {
+	header h1 span {
+		font-size: 20px;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+  	#container {
+  		width:100%;
+  	}
+
+  	#main {
+  		font-size:14px;
+  	}
+}
+
+@media only screen and (max-width:750px) {
+	.background-gradient {
+		background:#fff;
+	}
+
+	header h1 {
+		font-size: 2.9375em;
+		line-height:35px;
+	}
+
+		header h1 span {
+			font-size: 14px;
+		}
+
+	.menu ul {
+		text-align: center;
+	}
+
+		nav ul li a, nav ul li a:visited {
+			padding: 7px 20px;
+		}
+
+	#main {
+		float: none;
+		width:95%;
+		margin: 2.188em auto 0 auto;
+		padding: 0;
+		font-size: 16px;
+	}
+
+	aside {
+		float: none;
+		width:95%;
+		padding: 1.25em 2.5%;
+		margin: 0 auto;
+		background: #E2E2E2;
+	}
+
+		aside nav ul {
+			overflow: hidden;
+		}
+
+			aside nav li:nth-child(1n) {
+				width: 47.5%;
+				margin: 0 2.5% 1.25em 0;
+				float: left;
+			}
+
+			aside nav li:nth-child(2n) {
+				width: 47.5%;
+				margin: 0 0 1.25em 2.5%;
+			}
+
+		#about-me-img {
+			margin-right: 2.898550724638%;
+			float: left;
+		}
+
+		#icons li {
+			float: left;
+			width: 33.333333%;
+		}
+
+			#icons li:first-child {
+				text-align: left;
+			}
+
+			#icons li:last-child {
+				text-align: right;
+			}
+}
+
+@media only screen and (max-width: 470px) {
+	header h1 {
+		font-size: 2.4em;
+	}
+
+		header h1 span {
+			display: none;
+		}
+
+	nav ul li a, nav ul li a:visited {
+		padding: 7px 13px;
+	}
+
+		nav li:last-child {
+			margin: 0;
+		}
+
+	.post-thumbnail {
+		margin: 0 auto;
+		float: none;
+		width:46.595744680851%;
+	}
+
+	.excerpt, .portfolio-info {
+		float: none;
+		margin: 0;
+		width: 100%;
+	}
+
+	ul.metadata li {
+		display: block;
+	}
+
+	#about-me-img {
+		float: none;
+		margin: 0 auto;
+		width: 40.425531914894%;
+	}
+
+	.single .post-thumbnail {
+		margin: 0 auto;
+		width:46.595744680851%;
+		float: none;
+	}
 
 }
 
-@media only screen and (min-width: 768px) {
-  /* Style adjustments for viewports 768px and over go here */
 
-}
+
+
+
+
+
+
 
 
 
