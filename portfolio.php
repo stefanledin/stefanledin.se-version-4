@@ -18,30 +18,62 @@ Template name: Portfolio
 				$terms_projekttyp = wp_get_post_terms(get_the_ID(),'projekttyp');
 				$terms_tekniker = wp_get_post_terms(get_the_ID(),'tekniker');
 				$projekt_url = get_post_meta($post->ID,'link',true);
+				$content = get_the_content();
 				?>
 				<article class="clearfix">
-					<a href="<?php the_permalink();?>"><?php the_post_thumbnail(); ?></a>
+					<div class="post-thumbnail">
+		    			<?php 
+
+		    				if (!empty($content)) {
+		    					?>
+		    						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+
+					    				<?php the_post_thumbnail(); ?>
+					    			
+					    			</a>
+		    					<?php
+		    				} else {
+
+		    					the_post_thumbnail();
+
+		    				}
+
+		    			?>
+
+	    			</div>
 					<div class="excerpt">
-						<h3><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h3>
+						<h3>
+							<?php 
+								if (!empty($content)) {
+									?>
+										<a href="<?php the_permalink();?>"><?php the_title(); ?></a>
+									<?php
+								} else {
+									the_title();
+								}
+							?>
+						</h3>
 						<ul class="metadata">
-						<?php 
-
-							foreach ($terms_projekttyp as $projekttyp) {
-								echo '<li>Projekttyp: <a href="'.get_term_link($projekttyp->slug, 'projekttyp').'">'.$projekttyp->name.'</a></li>';
-							}
-
-
-						 ?>
+							
+							<?php 
+								for ($i=0; $i < count($terms_projekttyp); $i++) { 
+									if (count($terms_projekttyp) == 1) {
+										echo '<li>Projekttyp: '.$terms_projekttyp[$i]->name.'</li>';	
+									} else {
+								 		if ($i == 0) {
+								 			echo '<li>Projekttyp: '.$terms_projekttyp[$i]->name.', ';
+								 		} elseif ($i == count($terms_projekttyp)-1) {
+								 			echo $terms_projekttyp[$i]->name . '</li>';
+								 		} else {
+								 			echo $terms_projekttyp[$i]->name . ', ';
+								 		}
+									}
+									
+								}
+							?>
+							
 						 </ul>
-						 <!--<?php 
-						 	echo '<pre>'.print_r($terms_projekttyp).'</pre>';
-						 	for ($i=0; $i < count($terms_projekttyp); $i++) { 
-						 		if ($i == 0) {
-						 			echo '<li>Projekttyp: '.$terms_projekttyp[$i]->name.'</li>';	
-						 		} 
-						 		
-						 	}
-					 	?>-->
+						 
 						 <p>Tekniker:</p>
 						 <ul>
 						 	<?php 
@@ -51,7 +83,6 @@ Template name: Portfolio
 						 	?>
 						 </ul>
 						 <?php 
-						 	$content = get_the_content();
 						 	if (!empty($content)) : ?>
 						 <a href="<?php the_permalink();?>">Läs mer</a> |<?php endif;?> <a href="<?php echo $projekt_url;?>" target="_blank"><?php echo $projekt_url;?></a>
 					 </div>
