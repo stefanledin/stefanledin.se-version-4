@@ -27,6 +27,8 @@
 		<!-- end CSS-->
 		
 		<!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+		<link rel="icon" href="<?php bloginfo('template_directory');?>/favicon.ico" />
+		<link rel="apple-touch-icon" href="<?php bloginfo('template_directory');?>/apple-touch-icon.png" />
 		
 		<!-- All JavaScript at the bottom, except for Modernizr / Respond.
 		Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries
@@ -46,6 +48,7 @@
 		  })();
 		
 		</script>
+		
 	</head>
 	
 	<body <?php body_class(); ?>>
@@ -54,23 +57,13 @@
 	  
 	    <header>
 	
-			<h1>&lt; Stefan Ledin &gt;<br /><span>HTML * CSS * Javascript * PHP * MySQL * Wordpress * Drupal<span></h1>
+			<h1>&lt; Stefan Ledin &gt;<br /><span>HTML * CSS * Javascript * PHP * MySQL * Wordpress * Drupal</span></h1>
 	
 	    </header>
 	    
 	    <nav>
 	    
-	    	<ul>
-			
-				<ul>
-					<!--
-					<li><a href="<?php bloginfo('url');?>">Blogg</a></li>
-					<?php wp_list_pages('sort_coloumn=menu_order&title_li='); ?>
-					-->
-					<?php wp_page_menu('show_home=Blogg'); ?>
-				</ul>
-			
-	    	</ul>
+			<?php wp_page_menu('show_home=Blogg'); ?>
 	    
 	    </nav>
 	    
