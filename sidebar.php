@@ -1,8 +1,10 @@
-<section>
+<section id="about-me">
 		
 		<h5>Stefan</h5>
 		
-		<img src="<?php bloginfo('template_directory');?>/img/ledin.jpg" title="Stefan Ledin" alt="Stefan Ledin" />
+		<div id="about-me-img">
+			<img src="<?php bloginfo('template_directory');?>/img/ledin.jpg" title="Stefan Ledin" alt="Stefan Ledin" />
+		</div>
 		
 		<p>Jag är 21 år gammal och kommer från Arvika. Till vardags går jag tredje och sista året på Broby Grafiskas KY-utbildning Grafisk Medieproduktion.<br /> För närvarande praktiserar jag som webbutvecklare på <a href="http://www.ordbild.se/" target="_blank">Ord & Bild</a> i Karlstad. <br />Jag frilansar även som sportjournalist och redigerare på Arvika Nyheter.</p>
 	
