@@ -2,6 +2,9 @@
 	
 	/*Miniatyrbilder för inlägg ska finnas*/
 	add_theme_support('post-thumbnails');
+
+	/*RSS*/
+	add_theme_support('automatic-feed-links');
 	
 	/*Ta bort "moore-hoppet*/
 	function remove_more_jump_link($link) { 
