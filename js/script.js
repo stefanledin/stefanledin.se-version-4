@@ -1,14 +1,28 @@
-/* Author: 
+/* Author: Stefan Ledin
 
 */
 
-var twitter = 'http://api.twitter.com/1/statuses/user_timeline.json?screen_name=stefanledin&count=5&callback=?';
-		
-var json = $.getJSON(twitter, function (tweets) {
+var getTwitter = 'http://api.twitter.com/1/statuses/user_timeline.json?screen_name=stefanledin&count=5&callback=?';
+var output = '';
+
+$.getJSON(getTwitter, function (tweets) {
+
 	for (var i = 0; i < tweets.length; i++) {
-		document.createTextNode(tweets[i].text);
-		document.getElementById('tweets').appendChild(document.createElement('li')).appendChild(document.createTextNode(tweets[i].text));
+		
+		var tweet = tweets[i].text;
+
+		var regexpUrl = /(http:[^\s]+)/g;
+
+		var regexpUsername = /(\s)(@)(\w+)/g;
+			
+		tweet = tweet.replace(regexpUrl, '<a href="$1">$1</a>').replace(regexpUsername, '<a href="http://twitter.com/$3">$2$3</a>');
+		
+		output += '<li>'+tweet+'</li>';
+
 	}
+	document.getElementById('tweets').
+		innerHTML=output;
+
 });
 
 
