@@ -9,7 +9,11 @@
 	    	
 	    		<article class="clearfix">
 	    			
-	    			<?php the_post_thumbnail('thumbnail'); ?>
+	    			<div class="post-thumbnail">
+		    			
+		    			<?php the_post_thumbnail('thumbnail'); ?>
+	    			
+	    			</div>
 	    			
 	    			<!--<div class="excerpt">-->
 	    			
