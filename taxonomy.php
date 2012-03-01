@@ -13,15 +13,28 @@
 				$terms_tekniker = wp_get_post_terms(get_the_ID(),'tekniker');
 			?>
 			<article class="clearfix">
-				<?php the_post_thumbnail(); ?>
+				<div class="post-thumbnail">
+					<?php the_post_thumbnail(); ?>
+				</div>
 				<div class="excerpt">
 					<h3><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h3>
 					<ul class="metadata">
 						<?php 
-							foreach ($terms_projekttyp as $projekttyp) {
-								echo '<li>Projekttyp: <a href="'.get_term_link($projekttyp->slug, 'projekttyp').'">'.$projekttyp->name.'</a></li>';
+							for ($i=0; $i < count($terms_projekttyp); $i++) { 
+								if (count($terms_projekttyp) == 1) {
+									echo '<li>Projekttyp: '.$terms_projekttyp[$i]->name.'</li>';	
+								} else {
+							 		if ($i == 0) {
+							 			echo '<li>Projekttyp: '.$terms_projekttyp[$i]->name.', ';
+							 		} elseif ($i == count($terms_projekttyp)-1) {
+							 			echo $terms_projekttyp[$i]->name . '</li>';
+							 		} else {
+							 			echo $terms_projekttyp[$i]->name . ', ';
+							 		}
+								}
+								
 							}
-						 ?>
+						?>
 					 </ul>
 					 <p>Tekniker:</p>
 					 <ul>
