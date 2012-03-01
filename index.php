@@ -8,7 +8,15 @@
 	    	
 	    		<article class="clearfix">
 	    			
-	    			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail('thumbnail'); ?></a>
+	    			<div class="post-thumbnail">
+		    			
+		    			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+
+		    				<?php the_post_thumbnail('thumbnail'); ?>
+		    			
+		    			</a>
+	    			
+	    			</div>
 	    			
 	    			<div class="excerpt">
 	    			
@@ -21,6 +29,7 @@
 		    				<li>Kategori: <?php the_category(', '); ?></li>
 		    			
 		    			</ul>
+
 						<?php the_content('Läs mer'); ?>
 	    			
 	    			</div>
