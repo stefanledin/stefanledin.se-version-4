@@ -9,8 +9,12 @@
 	    	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	    	
 	    		<article class="clearfix">
-	    			
-	    			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail(); ?></a>
+    				
+    				<div class="post-thumbnail">
+
+	    				<?php the_post_thumbnail('thumbnail'); ?>
+
+	    			</div>
 	    			
 	    			<div class="excerpt">
 	    			
