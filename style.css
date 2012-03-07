@@ -2,7 +2,7 @@
 Theme Name: stefanledin.se version 4
 Theme URI: http://www.stefanledin.se
 Description: Wordpress-temat till den fjärde versionen av min portfolio, stefanledin.se. I temats grund ligger HTML5 Boilerplate men i övrigt har jag utvecklat allting från scratch.
-Version: 1.0
+Version: 2.1
 Author: Stefan Ledin
 Author URI: http://www.stefanledin.se
 */
@@ -372,11 +372,11 @@ nav ul li {
 .background-gradient {
 	overflow: hidden;
 	background-color: #ffffff;
-	background-image: -webkit-linear-gradient(left, #ffffff 75.9375%, #E2E2E2 75.9375%, #ffffff 76.041666666667%, #F1F1F1 76.145833333333%); 
-	background-image:    -moz-linear-gradient(left, #ffffff 729px,#E2E2E2 730px,#ffffff 730px, #F1F1F1 731px);
-	background-image:     -ms-linear-gradient(left, #ffffff 729px,#E2E2E2 730px,#ffffff 730px, #F1F1F1 731px);
-	background-image:      -o-linear-gradient(left, #ffffff 729px,#E2E2E2 730px,#ffffff 730px, #F1F1F1 731px);
-	background-image:         linear-gradient(left, #ffffff 729px,#E2E2E2 730px,#ffffff 730px, #F1F1F1 731px);
+	background-image: -webkit-linear-gradient(left, #ffffff 75.9375%, #E2E2E2 76.041666666667%, #ffffff 76.041666666667%, #F1F1F1 76.145833333333%); 
+	background-image:    -moz-linear-gradient(left, #ffffff 75.9375%,#E2E2E2 76.041666666667%,#ffffff 76.041666666667%, #F1F1F1 76.145833333333%);
+	background-image:     -ms-linear-gradient(left, #ffffff 75.9375%,#E2E2E2 76.041666666667%,#ffffff 76.041666666667%, #F1F1F1 76.145833333333%);
+	background-image:      -o-linear-gradient(left, #ffffff 75.9375%,#E2E2E2 76.041666666667%,#ffffff 76.041666666667%, #F1F1F1 76.145833333333%);
+	background-image:         linear-gradient(left, #ffffff 75.9375%,#E2E2E2 76.041666666667%,#ffffff 76.041666666667%, #F1F1F1 76.145833333333%);
 }
 
 #main {
