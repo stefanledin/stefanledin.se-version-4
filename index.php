@@ -41,14 +41,7 @@
 	    		<h1>Hoppsan, här fanns inget att visa.</h1>
 	    	
 	    	<?php endif;?>
-
-	    	<div class="previous_page">
-	    		<?php previous_posts_link('« Föregående sida'); ?>
-	    	</div>
-	    	<div class="next_page">
-	    		<?php next_posts_link('Nästa sida »'); ?>
-	    	</div>
-	    				
+			
 	    </div> <!-- Slut #main -->
 	    
 	    <aside>
