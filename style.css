@@ -465,6 +465,14 @@ nav ul li {
 			font-weight: 100;
 		}
 
+.previous_page {
+	float: left;
+}
+
+.next_page {
+	float: right;
+}
+
 /*Aside*/
 
 aside {

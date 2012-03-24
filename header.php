@@ -12,7 +12,22 @@
 		More info: h5bp.com/b/378 -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		
-		<title>Stefan Ledin - webbutvecklare</title>
+		<title><?php
+		/*
+		 * Print the <title> tag based on what is being viewed.
+		 */
+		global $page, $paged;
+
+		wp_title( '|', true, 'right' );
+
+		// Add the blog name.
+		bloginfo( 'name' );
+
+		// Add a page number if necessary:
+		if ( $paged >= 2 || $page >= 2 )
+			echo ' | ' . sprintf( __( 'Sida %s', 'twentyeleven' ), max( $paged, $page ) );
+
+		?></title>
 		<meta name="description" content="Webbutvecklaren Stefan Ledins portfolio och blogg.">
 		<meta name="author" content="Stefan Ledin">
 		
