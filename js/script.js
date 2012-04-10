@@ -11,7 +11,7 @@ $.getJSON(getTwitter, function (tweets) {
 		
 		var tweet = tweets[i].text;
 
-		var regexpUrl = /(http|s:[^\s]+)/g;
+		var regexpUrl = /(https?:[^\s]+)/g;
 
 		var regexpUsername = /(\s)(@)(\w+)/g;
 			
