@@ -6,7 +6,7 @@
 			<img src="<?php bloginfo('template_directory');?>/img/ledin.jpg" title="Stefan Ledin" alt="Stefan Ledin" />
 		</div>
 		
-		<p>Jag är 21 år gammal och kommer från Arvika. Till vardags jobbar jag som webbutvecklare på <a href="http://www.ordbild.se/" target="_blank">Ord & Bild Reklambyrå</a> i Karlstad. <br />Jag frilansar även som sportjournalist och redigerare på Arvika Nyheter.</p>
+		<p>Jag är 22 år gammal och kommer från Arvika. Till vardags jobbar jag som webbutvecklare på <a href="http://www.ordbild.se/" target="_blank">Ord & Bild Reklambyrå</a> i Karlstad. <br />Jag frilansar även som sportjournalist och redigerare på Arvika Nyheter.</p>
 	
 	</section>
 	
